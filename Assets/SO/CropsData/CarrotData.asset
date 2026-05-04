@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 385450313de28c64c9b646f5cb0ea26f, type: 3}
+  m_Name: CarrotData
+  m_EditorClassIdentifier: 
+  cropID: crop_001
+  cropName: "\u80E1\u841D\u535C"
+  description: 
+  daysPerStage: 1
+  waterCooldown: 5
+  waterSpeedUpStages: 1
+  stageSprites:
+  - {fileID: 21300000, guid: 16ac2e03279299a4bb993ecfac137114, type: 3}
+  - {fileID: 21300000, guid: 4b4366428db53554ea735ab00d52b400, type: 3}
+  - {fileID: 21300000, guid: c4286d0c70b52024d8cad7cbc784b9c6, type: 3}
+  - {fileID: 21300000, guid: 546b1109ef1817b4bac1e5ff2750a1e8, type: 3}
+  - {fileID: 21300000, guid: 6e026a544ec7f904aa4f6f09d176c4a0, type: 3}
+  harvestItemPrefab: {fileID: 3206713177913792461, guid: 48fe8b2ba66c76745afbcc44279e5fd8, type: 3}
+  minHarvestAmount: 1
+  maxHarvestAmount: 3
+  seedItemPrefab: {fileID: 2492423662093536641, guid: dc88abe8443919f42906708dea69f389, type: 3}
+  allowedSeasons: 
