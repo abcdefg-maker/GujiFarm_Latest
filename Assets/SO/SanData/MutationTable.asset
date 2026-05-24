@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4ec68e068948a4c9a84b152ec6d7d9, type: 3}
   m_Name: MutationTable
   m_EditorClassIdentifier: 
-  entries: []
+  entries:
+  - normalCrop: {fileID: 11400000, guid: ac6ddc62cb6cd9e41b036fbed04c4bad, type: 2}
+    mutatedCrop: {fileID: 11400000, guid: d5575e31932df7b4087f0d9755cbeaa3, type: 2}
+    probabilityMultiplier: 3
