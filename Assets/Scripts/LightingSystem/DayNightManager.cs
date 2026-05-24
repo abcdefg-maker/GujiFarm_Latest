@@ -258,17 +258,18 @@ namespace LightingSystem
         #region Effect Management
         /// <summary>
         /// 从 Inspector 列表中收集实现了 IDayNightEffect 的组件。
+        /// 不清空 effects — 其他组件 Start 协程可能已通过 RegisterEffect 抢先动态注册（协程调度顺序无保证）。
         /// </summary>
         private void CollectEffects()
         {
-            effects.Clear();
             if (effectBehaviours == null) return;
 
             foreach (var mb in effectBehaviours)
             {
                 if (mb is IDayNightEffect effect)
                 {
-                    effects.Add(effect);
+                    if (!effects.Contains(effect))
+                        effects.Add(effect);
                 }
                 else if (mb != null)
                 {

@@ -18,6 +18,10 @@ namespace SanitySystem
         private float nightLevelThreshold = SanityConstants.NightDrainActivationLevel;
         private SanityConfigSO config;
         private bool initialized = false;
+
+        // [TEMP DEBUG] 临时调试 — 修复完成后删除
+        private float debugLogTimer = 0f;
+        private int debugTickCount = 0;
         #endregion
 
         #region ISanityDrainSource Implementation
@@ -46,6 +50,16 @@ namespace SanitySystem
         public void Tick(DayNightContext context)
         {
             currentNightLevel = context.NightLevel;
+
+            // [TEMP DEBUG] 临时调试 — 修复完成后删除
+            debugTickCount++;
+            debugLogTimer += context.DeltaTime;
+            if (debugLogTimer >= 2f)
+            {
+                debugLogTimer = 0f;
+                bool drainActive = initialized && currentNightLevel > nightLevelThreshold;
+                Debug.Log($"[NightSanityDrain DEBUG] hour={context.CurrentHour:F2} nightLevel={currentNightLevel:F2} threshold={nightLevelThreshold} initialized={initialized} IsActive={drainActive} ticksSinceStart={debugTickCount} SAN={SanityManager.Instance?.CurrentSanity ?? -1f:F1}");
+            }
         }
 
         #endregion
