@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 385450313de28c64c9b646f5cb0ea26f, type: 3}
-  m_Name: CarrotData
+  m_Name: '[crop-001]CarrotData'
   m_EditorClassIdentifier: 
   cropID: crop_001
   cropName: "\u80E1\u841D\u535C"

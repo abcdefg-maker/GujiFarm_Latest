@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 385450313de28c64c9b646f5cb0ea26f, type: 3}
-  m_Name: PotatoData
+  m_Name: '[crop-002]PotatoData'
   m_EditorClassIdentifier: 
   cropID: crop_002
   cropName: "\u756A\u8304"
