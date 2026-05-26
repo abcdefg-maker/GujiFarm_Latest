@@ -93,11 +93,27 @@ namespace Core.Player
         {
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
-            moveDirection = new Vector3(horizontal, 0f, vertical).normalized;
+            Vector3 inputDir = new Vector3(horizontal, 0f, vertical).normalized;
+
+            if (mainCamera != null && inputDir.sqrMagnitude > 0.0001f)
+            {
+                Vector3 camForward = mainCamera.transform.forward;
+                Vector3 camRight = mainCamera.transform.right;
+                camForward.y = 0f;
+                camRight.y = 0f;
+                camForward.Normalize();
+                camRight.Normalize();
+                moveDirection = (camRight * horizontal + camForward * vertical).normalized;
+            }
+            else
+            {
+                moveDirection = inputDir;
+            }
 
             if (animatorController != null)
             {
-                animatorController.SetMoveDirection(moveDirection);
+                // 动画朝向使用原始输入空间，避免相机旋转后 W 不再触发背面动画
+                animatorController.SetMoveDirection(inputDir);
             }
         }
 
